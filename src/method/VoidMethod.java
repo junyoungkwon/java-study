@@ -11,5 +11,4 @@ public class VoidMethod {
 	public static void main(String[] args) {
 		test(10, 30);
 	}
-
 }

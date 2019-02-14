@@ -9,7 +9,7 @@ public class ReturnMethod {
 				return i;
 			}
 		}
-		return 0;
+		return -1;
 	}
 
 	public static void main(String[] args) {
@@ -17,8 +17,9 @@ public class ReturnMethod {
 		nums[0] = 7;
 		nums[1] = 4;
 		nums[2] = 1;
-		int idx = indexOf(nums,4);
-		System.out.println("4의 위치는 : " + idx);
+		int idx = indexOf(nums,5); // <- 지우고
+		System.out.println("5의 위치는 : " + idx);
+		//System.out.println("5의 위치는 : " + indexoff(num,5); <- 가능
 	}
 
 }
