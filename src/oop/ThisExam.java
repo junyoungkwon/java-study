@@ -11,7 +11,7 @@ public class ThisExam {
 		return this.num;
 	}
 	
-	ThisExam() {}
+	
 		
 	public static void main(String[] args) {
 		ThisExam te = new ThisExam();
