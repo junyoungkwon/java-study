@@ -19,7 +19,8 @@ public class Baseball1 {
 		int sCnt = 0;
 		int bCnt = 0;
 
-		System.out.println("numList : " + numList);
+//		System.out.println("numList : " + numList);
+
 		Scanner scan = new Scanner(System.in);
 
 		while (sCnt != 3) {
