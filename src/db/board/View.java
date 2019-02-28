@@ -42,7 +42,10 @@ public class View {
 							String content = scan.nextLine();
 							bs.insertBoard(title, content);
 						} else if ("2".equals(cmd)) {
-							bs.deleteBoard();
+							System.out.print("삭제할 번호를 입력해주세요 : ");
+							String bi_num = scan.nextLine();
+							bs.deleteBoard(bi_num);
+
 						} else if ("4".equals(cmd)) {
 							System.out.print("bi_num : ");
 							String bi_num = scan.nextLine();
@@ -51,7 +54,7 @@ public class View {
 							System.out.print("내용 : ");
 							String content = scan.nextLine();
 							bs.updateBoard(bi_num, title, content);
-						} 
+						}
 					}
 				} else
 					System.out.println("비밀번호가 틀렸습니다");

@@ -43,28 +43,43 @@ public class BoardService {
 		}
 	}
 
-	public void updateBoard(String title, String content, String bi_num) {
-		String sql = "update board_info, set bi_title=?,bi_content=? where bi_num=?";
+	public void updateBoard(String bi_num, String title, String content) {
+		int biNum = Integer.parseInt(bi_num);
+		String sql = "update board_info  set bi_title=?, bi_content=?, where bi_num=?";
 		try {
 			PreparedStatement ps = DBCon.getCon().prepareStatement(sql);
-			
 			ps.setString(1, title);
 			ps.setString(2, content);
-			ps.setString(3, bi_num);
+			ps.setInt(3, biNum);
 			int cnt = ps.executeUpdate();
 			if (cnt == 1) {
-				System.out.println("게시물이 정상적으로 수정되었습니다.");
+				System.out.println(biNum + "게시물이 정상적으로 수정되었습니다.");
 			} else {
-				System.out.println("게시물 수정이 실패하였습니다.");
+				System.out.println(biNum + "게시물 수정이 실패하였습니다.");
 			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		DBCon.close();
 	}
 
-	public void deleteBoard() {
+	public void deleteBoard(String bi_num) {
+		int biNum = Integer.parseInt(bi_num);
+		String sql = "delete board_info where binum=?";
+		try {
+			PreparedStatement ps = DBCon.getCon().prepareStatement(sql);
+			ps.setInt(1, biNum);
+			int cnt = ps.executeUpdate();
+			if (cnt == 1) {
+				System.out.println(biNum + "게시물이 정상적으로 삭제되었습니다.");
+			} else {
+				System.out.println(biNum + "게시물 삭제가 실패하였습니다.");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 }
