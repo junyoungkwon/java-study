@@ -25,9 +25,7 @@ public class MapExam4 {
 		mapList.add(map1);
 		mapList.add(map2);
 		System.out.println(mapList.get(0).get("이름"));
-		
-		
-		
+				
 	}
 
 }
